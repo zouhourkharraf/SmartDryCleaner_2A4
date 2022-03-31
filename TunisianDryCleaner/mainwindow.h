@@ -3,12 +3,9 @@
 #include <QtGui>
 #include <QtNetwork>
 
-#include <QWidget>
 #include <QMainWindow>
 #include"employe.h"
 #include"profil.h"
-
-
 
 
 QT_BEGIN_NAMESPACE
@@ -23,8 +20,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
    void set_login_de_emp_connecte(QString); //cette méthode permet d'afficher le login de l'employé qui vient de se connecter
-    bool get_deconnexion(){return deconnexion;}
-    void set_deconnexion(bool d){ deconnexion=d; }
+  //  bool get_deconnexion(){return deconnexion;}
+ //   void set_deconnexion(bool d){ deconnexion=d; }
 
     bool creer_pdf(int);
 public slots:
@@ -37,10 +34,6 @@ private slots:
 
     void on_bouton_page1_clicked();
 
-
-    void on_pushButton_ok_aj_clicked();
-
-    void on_pushButton_ok_md_clicked();
 
     void on_bouton_valider_clicked();
 
@@ -104,9 +97,9 @@ private:
     bool deconnexion;
     Employe E;
     Profil P;
-    Profil EmpConnecte;
+    //Profil EmpConnecte;
     // attributs (pour le Chat)
-    QTcpSocket *socket; // Repr�sente le serveur
+    QTcpSocket *socket; // Représente le serveur
     quint16 tailleMessage;
 
 };

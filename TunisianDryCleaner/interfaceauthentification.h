@@ -24,7 +24,6 @@ private slots:
 
 private:
     Ui::InterfaceAuthentification *uia;
-
     MainWindow w;
     Profil P;
 };

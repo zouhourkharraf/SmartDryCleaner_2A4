@@ -1,7 +1,7 @@
 
 QT       += core gui sql
 QT       += core gui
-QT += printsupport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -19,14 +19,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 #Gestion du réseau
 TEMPLATE = app
-CONFIG += release
+#CONFIG += release
 QT += network
 #TARGET =
 DEPENDPATH += .
 INCLUDEPATH += .
 
+QT += printsupport
+
 SOURCES += \
-    connexion.cpp \
+    connection.cpp \
     employe.cpp \
     interfaceauthentification.cpp \
     main.cpp \
@@ -34,7 +36,7 @@ SOURCES += \
     profil.cpp
 
 HEADERS += \
-    connexion.h \
+    connection.h \
     employe.h \
     interfaceauthentification.h \
     mainwindow.h \

@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include<QMessageBox>
 #include<QString>
-#include"employe.h"
+
 #include<QSqlQuery>
 #include<QObject>
 #include<QSqlQueryModel>
@@ -107,20 +107,6 @@ void MainWindow::on_boutonpg_4_vers_3_clicked()
 
 //---> (fin) l'accès aux différentes pages du staket widgets
 
-
-
-
-void MainWindow::on_pushButton_ok_aj_clicked()
-{
-    //QString x= ui->comboBox_ajouter->currentText();
-   //QMessageBox::information(this,"title",ui->comboBox_ajouter->currentText());
-}
-
-void MainWindow::on_pushButton_ok_md_clicked()
-{
-    //QString x= ui->comboBox_modifier->currentText();
-    //QMessageBox::information(this,"title",ui->comboBox_modifier->currentText());
-}
 
 
 
@@ -623,7 +609,7 @@ void MainWindow::erreurSocket(QAbstractSocket::SocketError erreur)
 void MainWindow::on_bouton_deconnecter_clicked()
 {
 
-   deconnexion=true;
+  // deconnexion=true;
 
 
 }

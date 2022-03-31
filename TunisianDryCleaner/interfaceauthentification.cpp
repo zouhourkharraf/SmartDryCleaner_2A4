@@ -1,6 +1,7 @@
-#include "interfaceauthentification.h"
-#include "ui_interfaceauthentification.h"
+#include"interfaceauthentification.h"
+#include"ui_interfaceauthentification.h"
 #include"mainwindow.h"
+
 #include <QApplication>
 #include<QMessageBox>
 #include<QString>
@@ -49,7 +50,6 @@ void InterfaceAuthentification::on_bouton_connexion_clicked()
            w.set_login_de_emp_connecte(P.get_login());
            hide();
            w.show();
-
 
 
         }

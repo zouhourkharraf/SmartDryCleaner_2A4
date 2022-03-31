@@ -3,6 +3,7 @@
 #include<QObject>
 #include<QSqlQueryModel>
 #include<QString>
+
 Employe::Employe()
 {
 nom=""; prenom=""; adresse=""; fonction=""; evaluation="";
@@ -22,10 +23,6 @@ Employe::Employe(QString nom,QString prenom,QString adresse,long tel,QString fon
     this->salaire=salaire;
     this->evaluation=evaluation;
 }
-
-
-
-
 
 
  // *****************   fonctionnalités de bases *******************

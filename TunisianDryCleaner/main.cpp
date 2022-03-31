@@ -1,7 +1,8 @@
 
 #include <QApplication>
 #include <QMessageBox>
-#include "connexion.h"
+#include"connection.h"
+
 #include"interfaceauthentification.h" // --->la classe (graphique) qui gère l'interface de l'authentification
 
 int main(int argc, char *argv[])
