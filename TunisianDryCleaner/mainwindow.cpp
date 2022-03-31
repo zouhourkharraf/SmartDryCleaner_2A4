@@ -109,7 +109,6 @@ void MainWindow::on_boutonpg_4_vers_3_clicked()
 
 
 
-
 void MainWindow::on_bouton_valider_clicked()
 {
     QString nom=ui->lineEdit_nom->text();
@@ -134,6 +133,7 @@ void MainWindow::on_bouton_valider_clicked()
       ui->tab_employes->setModel(E.afficher()); //---> Actualisation de l'affichage
       ui->comboBox_supression->setModel(E.afficher_matricules()); //---> Actualisation de l'affichage de la liste déroulante pour la suppression
       ui->comboBox_matricule_profils->setModel(P.recuperer_matricule_pour_profil()); //--->Actualisation de l'affichage de la liste déroulante pour les matricule des employés qui non pas encore créé un profil
+      ui->comboBox_mat_bulletin_depaie->setModel(E.afficher_matricules());
 
       QMessageBox::critical(nullptr, QObject::tr("Ajout d'un employé TunisianDryCleaner"),
                   QObject::tr("Ajout effectué.\n"
@@ -262,7 +262,7 @@ void MainWindow::on_bouton_modifier_clicked()
        if(test)
        {
             ui->tab_employes->setModel(E.afficher()); // ---> Actualisation de l'affichage
-            ViderLesChamps_PageModifier();//remettre les champs de saisie dans leur état de départ
+            ViderLesChamps_PageModifier();//remettre les champs de saisie à leurs état de départ
            QMessageBox::critical(nullptr, QObject::tr("Modification des données TunisianDryCleaner"),
                        QObject::tr("La modification a été efféctuée.\n"
                                    "Click Cancel to exit."), QMessageBox::Cancel);
@@ -357,12 +357,6 @@ void MainWindow::on_bouton_recherche_clicked()
 }
 
 
-
-
-
-
-
-
 void MainWindow::on_bouton_ok_matricule_profil_clicked()
 {
     ui->comboBox_matricule_profils->setDisabled(true);
@@ -374,7 +368,6 @@ void MainWindow::on_bouton_ok_matricule_profil_clicked()
     ui->lineEdit_login->setReadOnly(true); //-->le transformer en mode lecture seule pour ne pas permettre à l'utilisateur de modifier sa valeur
     P.set_login(ui->lineEdit_login->text());
 }
-
 
 
 
