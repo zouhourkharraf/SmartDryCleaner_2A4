@@ -1,4 +1,3 @@
-
 QT       += core gui sql
 QT       += core gui
 QT += printsupport

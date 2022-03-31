@@ -1,7 +1,5 @@
-
-QT       += core gui sql
 QT       += core gui
-QT += printsupport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -19,30 +17,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 #Gestion du réseau
 TEMPLATE = app
-CONFIG += release
 QT += network
 #TARGET =
 DEPENDPATH += .
 INCLUDEPATH += .
 
 SOURCES += \
-    connexion.cpp \
-    employe.cpp \
-    interfaceauthentification.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    profil.cpp
+    fenetreserveur.cpp \
+    main.cpp
 
 HEADERS += \
-    connexion.h \
-    employe.h \
-    interfaceauthentification.h \
-    mainwindow.h \
-    profil.h
+    fenetreserveur.h
 
 FORMS += \
-    interfaceauthentification.ui \
-    mainwindow.ui
+    fenetreserveur.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -619,16 +619,13 @@ void MainWindow::erreurSocket(QAbstractSocket::SocketError erreur)
 
 // ******************************** Fin Slots (Pour le Chat) ********************************
 
-//***************** La déconnection *****************
+
 void MainWindow::on_bouton_deconnecter_clicked()
 {
 
    deconnexion=true;
 
-
 }
-//***************** La déconnection *****************
-
 
 // ******************************************** Génerer un fichier PDF **************************************
 void MainWindow::on_bouton_generer_bp_clicked()

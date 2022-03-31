@@ -1,4 +1,4 @@
-#include "connection.h"
+#include "connexion.h"
 
 Connection::Connection()
 {
