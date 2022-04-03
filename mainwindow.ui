@@ -60,20 +60,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="rechercher">
-      <property name="geometry">
-       <rect>
-        <x>700</x>
-        <y>20</y>
-        <width>171</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Rechercher par ID</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="idrech">
+     <widget class="QLineEdit" name="recherche">
       <property name="geometry">
        <rect>
         <x>552</x>

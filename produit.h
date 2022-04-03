@@ -35,11 +35,11 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer (int);
     bool modifier(int ,int  , QDate   ,int ,QString  , QString ,int );
-    QSqlQueryModel * rechercher(int );
+
     QSqlQueryModel * tridesc();
     QString  apercu_pdf();
     QSqlQueryModel * recuperer_produit(int );
-
+    QSqlQueryModel * rechercher_produit(const QString &b);
 
 
 };

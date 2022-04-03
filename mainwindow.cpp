@@ -131,12 +131,7 @@ void MainWindow::on_Trier_clicked()
      ui->tableView->setModel(Etmp.tridesc());
 }
 
-void MainWindow::on_rechercher_clicked()
-{
-    int id=ui->idrech->text().toInt();
-    ui->tableView->setModel(Etmp.rechercher(id));
 
-}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -275,4 +270,23 @@ void MainWindow:: showTime(){
         time_text[8] = ' ';
     }
     ui->Digtal_clock->setText(time_text);
+}
+
+
+
+
+
+void MainWindow::on_recherche_textChanged(const QString &arg1)
+{
+  Produit p;
+
+        if(ui->recherche->text()=="")
+        {
+            ui->tableView->setModel(p.afficher());
+        }
+        else
+        {
+           ui->tableView->setModel(p.rechercher_produit(ui->recherche->text()));
+
+    }
 }

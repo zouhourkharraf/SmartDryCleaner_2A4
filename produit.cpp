@@ -93,16 +93,8 @@ bool Produit :: supprimer(int id_prod)
           return  query.exec();
       }
 
- QSqlQueryModel * Produit::  rechercher(int id_prod )
-    {
-        QString idprod_string=QString::number(id_prod);
-        QSqlQueryModel * model= new QSqlQueryModel();
-        model-> setQuery("SELECT * FROM PRODUITS where ID_PROD = "+idprod_string);
 
 
-        return model;
-
-    }
 
      QSqlQueryModel * Produit::  tridesc()
      {
@@ -160,4 +152,21 @@ bool Produit :: supprimer(int id_prod)
      }
 
 
+     QSqlQueryModel * Produit::rechercher_produit(const QString &b)
+         {
 
+
+
+                 QSqlQueryModel * model = new QSqlQueryModel();
+                 model->setQuery("SELECT * FROM PRODUITS WHERE (id_prod || libelle_prod || prix_achat|| date_entree_enstock || qte || classification || id_f) LIKE '%"+b+"%'");
+                 model->setHeaderData(0, Qt::Horizontal, QObject :: tr("id_prod"));
+                 model->setHeaderData(1, Qt::Horizontal, QObject :: tr("libelle_prod"));
+                 model->setHeaderData(2, Qt::Horizontal, QObject :: tr("prix_achat"));
+                 model->setHeaderData(3, Qt::Horizontal, QObject :: tr("date_entree_enstock"));
+                 model->setHeaderData(4, Qt::Horizontal, QObject :: tr("qte"));
+                 model->setHeaderData(5, Qt::Horizontal, QObject :: tr("classification"));
+                 model->setHeaderData(6, Qt::Horizontal, QObject :: tr("id_f"));
+                 return model;
+
+
+         }

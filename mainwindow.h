@@ -31,7 +31,7 @@ private slots:
 
     void on_Trier_clicked();
 
-    void on_rechercher_clicked();
+
 
     void on_pushButton_clicked();
 
@@ -54,6 +54,11 @@ private slots:
 
     void on_augmenter_clicked();
     void showTime();
+
+
+
+
+    void on_recherche_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
