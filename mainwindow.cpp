@@ -187,6 +187,10 @@ void MainWindow::on_commandLinkButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+void MainWindow::on_commandLinkButton_3_clicked()
+{
+     ui->stackedWidget->setCurrentIndex(2);
+}
 
 
 
@@ -290,3 +294,48 @@ void MainWindow::on_recherche_textChanged(const QString &arg1)
 
     }
 }
+
+void MainWindow::on_radioButton_clicked()
+{
+    if (ui->radioButton->isCheckable ())
+      {
+          qApp->setStyleSheet("QWidget  {color: grey; background-color: black}");
+
+
+          ui->pb_ajouter->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+         // ui->p ->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                             //  "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->pushButton_2->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->image_2->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->augmenter->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->Trier->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->Impdos_2->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->ok->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->pushButton_modifier->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          ui->supprimer->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+
+          ui->pushButton->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                               "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+          //ui->pushButton_5->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                              // "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+
+         // ui->pushButton_2->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                              // "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+         // ui->pushButton_11->setStyleSheet("QPushButton {color: black; background-color: grey; }\n"
+                              // "QPushButton:enabled { background-color: rgb(255,255,255); }\n");
+         // ui->tab_sponsor_2->setStyleSheet("QTableView {color: black; background-color: grey; }\n");
+          ui->tableView->setStyleSheet("QTableView {Selection-background-color: grey ; Background-color: white; Border：1px solid #000000;  Gridline-color: lightgray;  Alternate-background-color: # 000000; }\n");
+          //ui->tab_sponsor_2->setStyleSheet("QHeaderView::section {Background-color: white; Border: 1px solid # 000000;  Border-bottom: 1px solid # 000000;  Height: 20px; // header height }\n");
+
+      }
+}
+
