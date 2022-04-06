@@ -242,7 +242,7 @@
         <widget class="QPushButton" name="pb_ajouter">
          <property name="geometry">
           <rect>
-           <x>40</x>
+           <x>90</x>
            <y>340</y>
            <width>111</width>
            <height>28</height>
@@ -278,7 +278,7 @@
         <widget class="QPushButton" name="pushButton_2">
          <property name="geometry">
           <rect>
-           <x>200</x>
+           <x>230</x>
            <y>340</y>
            <width>111</width>
            <height>28</height>
@@ -577,7 +577,7 @@
         </widget>
        </widget>
       </widget>
-      <widget class="QWidget" name="page">
+      <widget class="QWidget" name="stackedWidgetPage3">
        <widget class="QGroupBox" name="groupBox_3">
         <property name="geometry">
          <rect>

@@ -185,11 +185,11 @@ void MainWindow::on_commandLinkButton_clicked()
 
 void MainWindow::on_commandLinkButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 void MainWindow::on_commandLinkButton_3_clicked()
 {
-     ui->stackedWidget->setCurrentIndex(2);
+     ui->stackedWidget->setCurrentIndex(0);
 }
 
 
