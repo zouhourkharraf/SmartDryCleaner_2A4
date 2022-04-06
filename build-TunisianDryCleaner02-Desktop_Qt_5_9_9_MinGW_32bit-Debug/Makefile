@@ -8,9 +8,9 @@
 
 MAKEFILE      = Makefile
 
-first: release
-install: release-install
-uninstall: release-uninstall
+first: debug
+install: debug-install
+uninstall: debug-uninstall
 QMAKE         = C:\Qt\Qt5.9.9\5.9.9\mingw53_32\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -28,24 +28,10 @@ SYMLINK       = $(QMAKE) -install ln -f -s
 DEL_DIR       = rmdir
 MOVE          = move
 SUBTARGETS    =  \
-		release \
-		debug
+		debug \
+		release
 
 
-release: FORCE
-	$(MAKE) -f $(MAKEFILE).Release
-release-make_first: FORCE
-	$(MAKE) -f $(MAKEFILE).Release 
-release-all: FORCE
-	$(MAKE) -f $(MAKEFILE).Release all
-release-clean: FORCE
-	$(MAKE) -f $(MAKEFILE).Release clean
-release-distclean: FORCE
-	$(MAKE) -f $(MAKEFILE).Release distclean
-release-install: FORCE
-	$(MAKE) -f $(MAKEFILE).Release install
-release-uninstall: FORCE
-	$(MAKE) -f $(MAKEFILE).Release uninstall
 debug: FORCE
 	$(MAKE) -f $(MAKEFILE).Debug
 debug-make_first: FORCE
@@ -60,6 +46,20 @@ debug-install: FORCE
 	$(MAKE) -f $(MAKEFILE).Debug install
 debug-uninstall: FORCE
 	$(MAKE) -f $(MAKEFILE).Debug uninstall
+release: FORCE
+	$(MAKE) -f $(MAKEFILE).Release
+release-make_first: FORCE
+	$(MAKE) -f $(MAKEFILE).Release 
+release-all: FORCE
+	$(MAKE) -f $(MAKEFILE).Release all
+release-clean: FORCE
+	$(MAKE) -f $(MAKEFILE).Release clean
+release-distclean: FORCE
+	$(MAKE) -f $(MAKEFILE).Release distclean
+release-install: FORCE
+	$(MAKE) -f $(MAKEFILE).Release install
+release-uninstall: FORCE
+	$(MAKE) -f $(MAKEFILE).Release uninstall
 
 Makefile: ../TunisianDryCleaner02/TunisianDryCleaner02.pro C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.conf C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/spec_pre.prf \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/qdevice.pri \
@@ -234,7 +234,7 @@ Makefile: ../TunisianDryCleaner02/TunisianDryCleaner02.pro C:/Qt/Qt5.9.9/5.9.9/m
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf \
 		../TunisianDryCleaner02/TunisianDryCleaner02.pro \
-		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmain.prl \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmaind.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl \
@@ -415,7 +415,7 @@ C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/exceptions.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf:
 ../TunisianDryCleaner02/TunisianDryCleaner02.pro:
-C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmain.prl:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmaind.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl:
@@ -427,29 +427,29 @@ qmake: FORCE
 
 qmake_all: FORCE
 
-make_first: release-make_first debug-make_first  FORCE
-all: release-all debug-all  FORCE
-clean: release-clean debug-clean  FORCE
-distclean: release-distclean debug-distclean  FORCE
+make_first: debug-make_first release-make_first  FORCE
+all: debug-all release-all  FORCE
+clean: debug-clean release-clean  FORCE
+distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
 
-release-mocclean:
-	$(MAKE) -f $(MAKEFILE).Release mocclean
 debug-mocclean:
 	$(MAKE) -f $(MAKEFILE).Debug mocclean
-mocclean: release-mocclean debug-mocclean
+release-mocclean:
+	$(MAKE) -f $(MAKEFILE).Release mocclean
+mocclean: debug-mocclean release-mocclean
 
-release-mocables:
-	$(MAKE) -f $(MAKEFILE).Release mocables
 debug-mocables:
 	$(MAKE) -f $(MAKEFILE).Debug mocables
-mocables: release-mocables debug-mocables
+release-mocables:
+	$(MAKE) -f $(MAKEFILE).Release mocables
+mocables: debug-mocables release-mocables
 
 check: first
 
 benchmark: first
 FORCE:
 
-$(MAKEFILE).Release: Makefile
 $(MAKEFILE).Debug: Makefile
+$(MAKEFILE).Release: Makefile

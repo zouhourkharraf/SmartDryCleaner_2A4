@@ -100,9 +100,7 @@ public:
     QRadioButton *radio_rech1;
     QPushButton *boutonpg_3_vers_2;
     QLineEdit *lineEdit_recherche;
-    QPushButton *bouton_recherche;
     QTableView *tab_recherche;
-    QPushButton *bouton_aide;
     QPushButton *boutonpg_3_vers_4;
     QWidget *page_gestion_profils;
     QPushButton *boutonpg_4_vers_3;
@@ -410,18 +408,10 @@ public:
         boutonpg_3_vers_2->setFont(font1);
         lineEdit_recherche = new QLineEdit(page_fonct_avance);
         lineEdit_recherche->setObjectName(QStringLiteral("lineEdit_recherche"));
-        lineEdit_recherche->setGeometry(QRect(20, 325, 211, 22));
-        bouton_recherche = new QPushButton(page_fonct_avance);
-        bouton_recherche->setObjectName(QStringLiteral("bouton_recherche"));
-        bouton_recherche->setGeometry(QRect(250, 325, 93, 25));
-        bouton_recherche->setFont(font1);
+        lineEdit_recherche->setGeometry(QRect(20, 325, 331, 22));
         tab_recherche = new QTableView(page_fonct_avance);
         tab_recherche->setObjectName(QStringLiteral("tab_recherche"));
         tab_recherche->setGeometry(QRect(10, 355, 351, 110));
-        bouton_aide = new QPushButton(page_fonct_avance);
-        bouton_aide->setObjectName(QStringLiteral("bouton_aide"));
-        bouton_aide->setGeometry(QRect(230, 268, 31, 25));
-        bouton_aide->setFont(font);
         boutonpg_3_vers_4 = new QPushButton(page_fonct_avance);
         boutonpg_3_vers_4->setObjectName(QStringLiteral("boutonpg_3_vers_4"));
         boutonpg_3_vers_4->setGeometry(QRect(300, 470, 75, 25));
@@ -616,7 +606,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -669,8 +659,6 @@ public:
         radio_rech3->setText(QApplication::translate("MainWindow", "Adresse", Q_NULLPTR));
         radio_rech1->setText(QApplication::translate("MainWindow", "Matricule", Q_NULLPTR));
         boutonpg_3_vers_2->setText(QApplication::translate("MainWindow", "Pr\303\251c\303\251dent", Q_NULLPTR));
-        bouton_recherche->setText(QApplication::translate("MainWindow", "Ok", Q_NULLPTR));
-        bouton_aide->setText(QApplication::translate("MainWindow", "?", Q_NULLPTR));
         boutonpg_3_vers_4->setText(QApplication::translate("MainWindow", "Suivant", Q_NULLPTR));
         boutonpg_4_vers_3->setText(QApplication::translate("MainWindow", "Pr\303\251c\303\251dent", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "Gestion des profils (L'authentification) :", Q_NULLPTR));

@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include<QMessageBox>
 #include<QString>
-#include"employe.h"
+
 #include<QSqlQuery>
 #include<QObject>
 #include<QSqlQueryModel>
@@ -109,21 +109,6 @@ void MainWindow::on_boutonpg_4_vers_3_clicked()
 
 
 
-
-void MainWindow::on_pushButton_ok_aj_clicked()
-{
-    //QString x= ui->comboBox_ajouter->currentText();
-   //QMessageBox::information(this,"title",ui->comboBox_ajouter->currentText());
-}
-
-void MainWindow::on_pushButton_ok_md_clicked()
-{
-    //QString x= ui->comboBox_modifier->currentText();
-    //QMessageBox::information(this,"title",ui->comboBox_modifier->currentText());
-}
-
-
-
 void MainWindow::on_bouton_valider_clicked()
 {
     QString nom=ui->lineEdit_nom->text();
@@ -148,6 +133,7 @@ void MainWindow::on_bouton_valider_clicked()
       ui->tab_employes->setModel(E.afficher()); //---> Actualisation de l'affichage
       ui->comboBox_supression->setModel(E.afficher_matricules()); //---> Actualisation de l'affichage de la liste déroulante pour la suppression
       ui->comboBox_matricule_profils->setModel(P.recuperer_matricule_pour_profil()); //--->Actualisation de l'affichage de la liste déroulante pour les matricule des employés qui non pas encore créé un profil
+      ui->comboBox_mat_bulletin_depaie->setModel(E.afficher_matricules());
 
       QMessageBox::critical(nullptr, QObject::tr("Ajout d'un employé TunisianDryCleaner"),
                   QObject::tr("Ajout effectué.\n"
@@ -276,7 +262,7 @@ void MainWindow::on_bouton_modifier_clicked()
        if(test)
        {
             ui->tab_employes->setModel(E.afficher()); // ---> Actualisation de l'affichage
-            ViderLesChamps_PageModifier();//remettre les champs de saisie dans leur état de départ
+            ViderLesChamps_PageModifier();//remettre les champs de saisie à leurs état de départ
            QMessageBox::critical(nullptr, QObject::tr("Modification des données TunisianDryCleaner"),
                        QObject::tr("La modification a été efféctuée.\n"
                                    "Click Cancel to exit."), QMessageBox::Cancel);
@@ -293,11 +279,8 @@ void MainWindow::on_bouton_modifier_clicked()
 
     }
 
-
-
-
-
 }
+
 
 void MainWindow::ViderLesChamps_PageModifier()
  {
@@ -344,38 +327,48 @@ void MainWindow::on_radio_tri3_clicked()
 
 //(Fin) Les boutons du tri : ******************
 
+//****************** les bouton radio pour la recherche ******************
+
+//lorsqu'on coche l'un des boutons radio la zone de recherche sera vidé automatiquement pour s'assurer que l'utilisateur va effectuer une recherche selon le critère choisi (le critère de ce bouton radio)
+//en effet l'utilisateur peut chercher selon un critère puis il change ce critère mais le maot clé reste la même mais avec cette méthode si l'utilisateur coche une autre bouton le champ de saisi sera vidé automatiquement pour qu'il puisse insérer le nouveau mot clé
+
+void MainWindow::on_radio_rech1_clicked()
+{
+    ui->lineEdit_recherche->setText("");
+}
+
+void MainWindow::on_radio_rech2_clicked()
+{
+    ui->lineEdit_recherche->setText("");
+}
+
+void MainWindow::on_radio_rech3_clicked()
+{
+      ui->lineEdit_recherche->setText("");
+}
+
+//****************** Fin des bouton radio pour la recherche ******************
 
 
+// **************** La zone de recherche ********************
 
-void MainWindow::on_bouton_recherche_clicked()
+void MainWindow::on_lineEdit_recherche_textChanged(const QString &arg1)
 {
     if(ui->radio_rech1->isChecked())
     {
-       ui->tab_recherche->setModel(E.recherche_selon_matricule(ui->lineEdit_recherche->text()) );
+       ui->tab_recherche->setModel(E.recherche_selon_matricule(arg1) );
     }
     else if(ui->radio_rech2->isChecked())
     {
-        ui->tab_recherche->setModel(E.recherche_selon_nomprenom(ui->lineEdit_recherche->text()) );
+        ui->tab_recherche->setModel(E.recherche_selon_nomprenom(arg1) );
     }
     else if(ui->radio_rech3->isChecked())
     {
-        ui->tab_recherche->setModel(E.recherche_selon_adresse(ui->lineEdit_recherche->text()) );
+        ui->tab_recherche->setModel(E.recherche_selon_adresse(arg1) );
     }
-    else
-    {
-       QMessageBox::information(this,"Erreur","Veuillez sélectionner un critère de recherche ");
-    }
-
-
 
 }
-
-
-
-
-
-
-
+// **************** Fin de La zone de recherche ********************
 
 void MainWindow::on_bouton_ok_matricule_profil_clicked()
 {
@@ -388,7 +381,6 @@ void MainWindow::on_bouton_ok_matricule_profil_clicked()
     ui->lineEdit_login->setReadOnly(true); //-->le transformer en mode lecture seule pour ne pas permettre à l'utilisateur de modifier sa valeur
     P.set_login(ui->lineEdit_login->text());
 }
-
 
 
 
@@ -619,13 +611,16 @@ void MainWindow::erreurSocket(QAbstractSocket::SocketError erreur)
 
 // ******************************** Fin Slots (Pour le Chat) ********************************
 
-
+//***************** La déconnection *****************
 void MainWindow::on_bouton_deconnecter_clicked()
 {
 
-   deconnexion=true;
+  // deconnexion=true;
+
 
 }
+//***************** La déconnection *****************
+
 
 // ******************************************** Génerer un fichier PDF **************************************
 void MainWindow::on_bouton_generer_bp_clicked()
@@ -732,3 +727,5 @@ bool MainWindow::creer_pdf(int mat)
 }
 
 // ******************************************** Génerer un fichier PDF **************************************
+
+

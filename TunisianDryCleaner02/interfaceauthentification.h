@@ -18,6 +18,7 @@ public:
     explicit InterfaceAuthentification(QWidget *parent = nullptr);
     ~InterfaceAuthentification();
 
+
 private slots:
     void on_bouton_connexion_clicked();
 

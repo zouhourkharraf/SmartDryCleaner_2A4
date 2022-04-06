@@ -279,11 +279,8 @@ void MainWindow::on_bouton_modifier_clicked()
 
     }
 
-
-
-
-
 }
+
 
 void MainWindow::ViderLesChamps_PageModifier()
  {
@@ -330,32 +327,48 @@ void MainWindow::on_radio_tri3_clicked()
 
 //(Fin) Les boutons du tri : ******************
 
+//****************** les bouton radio pour la recherche ******************
+
+//lorsqu'on coche l'un des boutons radio la zone de recherche sera vidé automatiquement pour s'assurer que l'utilisateur va effectuer une recherche selon le critère choisi (le critère de ce bouton radio)
+//en effet l'utilisateur peut chercher selon un critère puis il change ce critère mais le maot clé reste la même mais avec cette méthode si l'utilisateur coche une autre bouton le champ de saisi sera vidé automatiquement pour qu'il puisse insérer le nouveau mot clé
+
+void MainWindow::on_radio_rech1_clicked()
+{
+    ui->lineEdit_recherche->setText("");
+}
+
+void MainWindow::on_radio_rech2_clicked()
+{
+    ui->lineEdit_recherche->setText("");
+}
+
+void MainWindow::on_radio_rech3_clicked()
+{
+      ui->lineEdit_recherche->setText("");
+}
+
+//****************** Fin des bouton radio pour la recherche ******************
 
 
+// **************** La zone de recherche ********************
 
-void MainWindow::on_bouton_recherche_clicked()
+void MainWindow::on_lineEdit_recherche_textChanged(const QString &arg1)
 {
     if(ui->radio_rech1->isChecked())
     {
-       ui->tab_recherche->setModel(E.recherche_selon_matricule(ui->lineEdit_recherche->text()) );
+       ui->tab_recherche->setModel(E.recherche_selon_matricule(arg1) );
     }
     else if(ui->radio_rech2->isChecked())
     {
-        ui->tab_recherche->setModel(E.recherche_selon_nomprenom(ui->lineEdit_recherche->text()) );
+        ui->tab_recherche->setModel(E.recherche_selon_nomprenom(arg1) );
     }
     else if(ui->radio_rech3->isChecked())
     {
-        ui->tab_recherche->setModel(E.recherche_selon_adresse(ui->lineEdit_recherche->text()) );
+        ui->tab_recherche->setModel(E.recherche_selon_adresse(arg1) );
     }
-    else
-    {
-       QMessageBox::information(this,"Erreur","Veuillez sélectionner un critère de recherche ");
-    }
-
-
 
 }
-
+// **************** Fin de La zone de recherche ********************
 
 void MainWindow::on_bouton_ok_matricule_profil_clicked()
 {
@@ -714,3 +727,5 @@ bool MainWindow::creer_pdf(int mat)
 }
 
 // ******************************************** Génerer un fichier PDF **************************************
+
+

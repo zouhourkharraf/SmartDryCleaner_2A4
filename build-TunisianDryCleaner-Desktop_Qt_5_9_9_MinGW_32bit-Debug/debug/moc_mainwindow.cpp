@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[34];
-    char stringdata0[835];
+    QByteArrayData data[38];
+    char stringdata0[915];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,24 +47,28 @@ QT_MOC_LITERAL(12, 289, 28), // "on_boutonpg_3_vers_2_clicked"
 QT_MOC_LITERAL(13, 318, 21), // "on_radio_tri1_clicked"
 QT_MOC_LITERAL(14, 340, 21), // "on_radio_tri2_clicked"
 QT_MOC_LITERAL(15, 362, 21), // "on_radio_tri3_clicked"
-QT_MOC_LITERAL(16, 384, 27), // "on_bouton_recherche_clicked"
-QT_MOC_LITERAL(17, 412, 28), // "on_boutonpg_3_vers_4_clicked"
-QT_MOC_LITERAL(18, 441, 28), // "on_boutonpg_4_vers_3_clicked"
-QT_MOC_LITERAL(19, 470, 37), // "on_bouton_ok_matricule_profil..."
-QT_MOC_LITERAL(20, 508, 32), // "on_bouton_ajouter_profil_clicked"
-QT_MOC_LITERAL(21, 541, 35), // "on_bouton_ok_login_modifier_c..."
-QT_MOC_LITERAL(22, 577, 33), // "on_bouton_modifier_profil_cli..."
-QT_MOC_LITERAL(23, 611, 34), // "on_bouton_supprimer_profil_cl..."
-QT_MOC_LITERAL(24, 646, 26), // "on_boutonConnexion_clicked"
-QT_MOC_LITERAL(25, 673, 24), // "on_boutonEnvoyer_clicked"
-QT_MOC_LITERAL(26, 698, 24), // "on_message_returnPressed"
-QT_MOC_LITERAL(27, 723, 13), // "donneesRecues"
-QT_MOC_LITERAL(28, 737, 8), // "connecte"
-QT_MOC_LITERAL(29, 746, 10), // "deconnecte"
-QT_MOC_LITERAL(30, 757, 12), // "erreurSocket"
-QT_MOC_LITERAL(31, 770, 28), // "QAbstractSocket::SocketError"
-QT_MOC_LITERAL(32, 799, 6), // "erreur"
-QT_MOC_LITERAL(33, 806, 28) // "on_bouton_generer_bp_clicked"
+QT_MOC_LITERAL(16, 384, 28), // "on_boutonpg_3_vers_4_clicked"
+QT_MOC_LITERAL(17, 413, 28), // "on_boutonpg_4_vers_3_clicked"
+QT_MOC_LITERAL(18, 442, 37), // "on_bouton_ok_matricule_profil..."
+QT_MOC_LITERAL(19, 480, 32), // "on_bouton_ajouter_profil_clicked"
+QT_MOC_LITERAL(20, 513, 35), // "on_bouton_ok_login_modifier_c..."
+QT_MOC_LITERAL(21, 549, 33), // "on_bouton_modifier_profil_cli..."
+QT_MOC_LITERAL(22, 583, 34), // "on_bouton_supprimer_profil_cl..."
+QT_MOC_LITERAL(23, 618, 26), // "on_boutonConnexion_clicked"
+QT_MOC_LITERAL(24, 645, 24), // "on_boutonEnvoyer_clicked"
+QT_MOC_LITERAL(25, 670, 24), // "on_message_returnPressed"
+QT_MOC_LITERAL(26, 695, 13), // "donneesRecues"
+QT_MOC_LITERAL(27, 709, 8), // "connecte"
+QT_MOC_LITERAL(28, 718, 10), // "deconnecte"
+QT_MOC_LITERAL(29, 729, 12), // "erreurSocket"
+QT_MOC_LITERAL(30, 742, 28), // "QAbstractSocket::SocketError"
+QT_MOC_LITERAL(31, 771, 6), // "erreur"
+QT_MOC_LITERAL(32, 778, 28), // "on_bouton_generer_bp_clicked"
+QT_MOC_LITERAL(33, 807, 33), // "on_lineEdit_recherche_textCha..."
+QT_MOC_LITERAL(34, 841, 4), // "arg1"
+QT_MOC_LITERAL(35, 846, 22), // "on_radio_rech1_clicked"
+QT_MOC_LITERAL(36, 869, 22), // "on_radio_rech2_clicked"
+QT_MOC_LITERAL(37, 892, 22) // "on_radio_rech3_clicked"
 
     },
     "MainWindow\0on_bouton_deconnecter_clicked\0"
@@ -79,7 +83,7 @@ QT_MOC_LITERAL(33, 806, 28) // "on_bouton_generer_bp_clicked"
     "on_boutonpg_2_vers_3_clicked\0"
     "on_boutonpg_3_vers_2_clicked\0"
     "on_radio_tri1_clicked\0on_radio_tri2_clicked\0"
-    "on_radio_tri3_clicked\0on_bouton_recherche_clicked\0"
+    "on_radio_tri3_clicked\0"
     "on_boutonpg_3_vers_4_clicked\0"
     "on_boutonpg_4_vers_3_clicked\0"
     "on_bouton_ok_matricule_profil_clicked\0"
@@ -92,7 +96,10 @@ QT_MOC_LITERAL(33, 806, 28) // "on_bouton_generer_bp_clicked"
     "on_message_returnPressed\0donneesRecues\0"
     "connecte\0deconnecte\0erreurSocket\0"
     "QAbstractSocket::SocketError\0erreur\0"
-    "on_bouton_generer_bp_clicked"
+    "on_bouton_generer_bp_clicked\0"
+    "on_lineEdit_recherche_textChanged\0"
+    "arg1\0on_radio_rech1_clicked\0"
+    "on_radio_rech2_clicked\0on_radio_rech3_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -102,7 +109,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      30,   14, // methods
+      33,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -110,36 +117,39 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  164,    2, 0x0a /* Public */,
-       3,    0,  165,    2, 0x08 /* Private */,
-       4,    0,  166,    2, 0x08 /* Private */,
-       5,    0,  167,    2, 0x08 /* Private */,
-       6,    0,  168,    2, 0x08 /* Private */,
-       7,    0,  169,    2, 0x08 /* Private */,
-       8,    0,  170,    2, 0x08 /* Private */,
-       9,    0,  171,    2, 0x08 /* Private */,
-      10,    0,  172,    2, 0x08 /* Private */,
-      11,    0,  173,    2, 0x08 /* Private */,
-      12,    0,  174,    2, 0x08 /* Private */,
-      13,    0,  175,    2, 0x08 /* Private */,
-      14,    0,  176,    2, 0x08 /* Private */,
-      15,    0,  177,    2, 0x08 /* Private */,
-      16,    0,  178,    2, 0x08 /* Private */,
-      17,    0,  179,    2, 0x08 /* Private */,
-      18,    0,  180,    2, 0x08 /* Private */,
-      19,    0,  181,    2, 0x08 /* Private */,
-      20,    0,  182,    2, 0x08 /* Private */,
-      21,    0,  183,    2, 0x08 /* Private */,
-      22,    0,  184,    2, 0x08 /* Private */,
-      23,    0,  185,    2, 0x08 /* Private */,
-      24,    0,  186,    2, 0x08 /* Private */,
-      25,    0,  187,    2, 0x08 /* Private */,
-      26,    0,  188,    2, 0x08 /* Private */,
-      27,    0,  189,    2, 0x08 /* Private */,
-      28,    0,  190,    2, 0x08 /* Private */,
-      29,    0,  191,    2, 0x08 /* Private */,
-      30,    1,  192,    2, 0x08 /* Private */,
-      33,    0,  195,    2, 0x08 /* Private */,
+       1,    0,  179,    2, 0x0a /* Public */,
+       3,    0,  180,    2, 0x08 /* Private */,
+       4,    0,  181,    2, 0x08 /* Private */,
+       5,    0,  182,    2, 0x08 /* Private */,
+       6,    0,  183,    2, 0x08 /* Private */,
+       7,    0,  184,    2, 0x08 /* Private */,
+       8,    0,  185,    2, 0x08 /* Private */,
+       9,    0,  186,    2, 0x08 /* Private */,
+      10,    0,  187,    2, 0x08 /* Private */,
+      11,    0,  188,    2, 0x08 /* Private */,
+      12,    0,  189,    2, 0x08 /* Private */,
+      13,    0,  190,    2, 0x08 /* Private */,
+      14,    0,  191,    2, 0x08 /* Private */,
+      15,    0,  192,    2, 0x08 /* Private */,
+      16,    0,  193,    2, 0x08 /* Private */,
+      17,    0,  194,    2, 0x08 /* Private */,
+      18,    0,  195,    2, 0x08 /* Private */,
+      19,    0,  196,    2, 0x08 /* Private */,
+      20,    0,  197,    2, 0x08 /* Private */,
+      21,    0,  198,    2, 0x08 /* Private */,
+      22,    0,  199,    2, 0x08 /* Private */,
+      23,    0,  200,    2, 0x08 /* Private */,
+      24,    0,  201,    2, 0x08 /* Private */,
+      25,    0,  202,    2, 0x08 /* Private */,
+      26,    0,  203,    2, 0x08 /* Private */,
+      27,    0,  204,    2, 0x08 /* Private */,
+      28,    0,  205,    2, 0x08 /* Private */,
+      29,    1,  206,    2, 0x08 /* Private */,
+      32,    0,  209,    2, 0x08 /* Private */,
+      33,    1,  210,    2, 0x08 /* Private */,
+      35,    0,  213,    2, 0x08 /* Private */,
+      36,    0,  214,    2, 0x08 /* Private */,
+      37,    0,  215,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -169,8 +179,11 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 30,   31,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 31,   32,
+    QMetaType::Void, QMetaType::QString,   34,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -196,28 +209,31 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->on_radio_tri1_clicked(); break;
         case 12: _t->on_radio_tri2_clicked(); break;
         case 13: _t->on_radio_tri3_clicked(); break;
-        case 14: _t->on_bouton_recherche_clicked(); break;
-        case 15: _t->on_boutonpg_3_vers_4_clicked(); break;
-        case 16: _t->on_boutonpg_4_vers_3_clicked(); break;
-        case 17: _t->on_bouton_ok_matricule_profil_clicked(); break;
-        case 18: _t->on_bouton_ajouter_profil_clicked(); break;
-        case 19: _t->on_bouton_ok_login_modifier_clicked(); break;
-        case 20: _t->on_bouton_modifier_profil_clicked(); break;
-        case 21: _t->on_bouton_supprimer_profil_clicked(); break;
-        case 22: _t->on_boutonConnexion_clicked(); break;
-        case 23: _t->on_boutonEnvoyer_clicked(); break;
-        case 24: _t->on_message_returnPressed(); break;
-        case 25: _t->donneesRecues(); break;
-        case 26: _t->connecte(); break;
-        case 27: _t->deconnecte(); break;
-        case 28: _t->erreurSocket((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
-        case 29: _t->on_bouton_generer_bp_clicked(); break;
+        case 14: _t->on_boutonpg_3_vers_4_clicked(); break;
+        case 15: _t->on_boutonpg_4_vers_3_clicked(); break;
+        case 16: _t->on_bouton_ok_matricule_profil_clicked(); break;
+        case 17: _t->on_bouton_ajouter_profil_clicked(); break;
+        case 18: _t->on_bouton_ok_login_modifier_clicked(); break;
+        case 19: _t->on_bouton_modifier_profil_clicked(); break;
+        case 20: _t->on_bouton_supprimer_profil_clicked(); break;
+        case 21: _t->on_boutonConnexion_clicked(); break;
+        case 22: _t->on_boutonEnvoyer_clicked(); break;
+        case 23: _t->on_message_returnPressed(); break;
+        case 24: _t->donneesRecues(); break;
+        case 25: _t->connecte(); break;
+        case 26: _t->deconnecte(); break;
+        case 27: _t->erreurSocket((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 28: _t->on_bouton_generer_bp_clicked(); break;
+        case 29: _t->on_lineEdit_recherche_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 30: _t->on_radio_rech1_clicked(); break;
+        case 31: _t->on_radio_rech2_clicked(); break;
+        case 32: _t->on_radio_rech3_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 28:
+        case 27:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -253,13 +269,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 33)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 33;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
+        if (_id < 33)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 33;
     }
     return _id;
 }

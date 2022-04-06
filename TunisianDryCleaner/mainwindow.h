@@ -59,10 +59,6 @@ private slots:
 
      void on_radio_tri3_clicked();
 
-
-
-     void on_bouton_recherche_clicked();
-
      void on_boutonpg_3_vers_4_clicked();
 
      void on_boutonpg_4_vers_3_clicked();
@@ -90,6 +86,17 @@ private slots:
       //(Fin) slots pour le Chat
 
      void on_bouton_generer_bp_clicked();
+
+     void on_lineEdit_recherche_textChanged(const QString &arg1); // La zone de recherche
+
+     //****************** Fin des bouton radio pour la recherche ******************
+     void on_radio_rech1_clicked();
+
+     void on_radio_rech2_clicked();
+
+     void on_radio_rech3_clicked();
+
+     //****************** Fin des bouton radio pour la recherche ******************
 
 private:
     Ui::MainWindow *ui;

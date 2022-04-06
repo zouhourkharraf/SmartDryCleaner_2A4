@@ -18,7 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 #Gestion du réseau
 TEMPLATE = app
-CONFIG += release
+
 QT += network
 #TARGET =
 DEPENDPATH += .
