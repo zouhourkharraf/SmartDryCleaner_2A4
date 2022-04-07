@@ -28,7 +28,6 @@ private slots:
 
     void on_pushButton_5_clicked();
 
-    void on_rech_clicked();
 
     void on_trier_clicked();
 
@@ -46,6 +45,10 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_Impdos_2_clicked();
+
+    void on_recherche_textChanged(const QString &arg1);
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;

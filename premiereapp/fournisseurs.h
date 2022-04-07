@@ -23,21 +23,10 @@ public:
      QSqlQueryModel* afficher();
      bool supprimer(int);
      bool modifier(int,QString,QString,QString,QString,int);
-     QSqlQueryModel * rechercher (int  );
+
       QSqlQueryModel *  tridesc();
       QString  apercu_pdf();
-
-
-
-
-
-
-
-
-
-
-
-
+     QSqlQueryModel * rechercher_fournisseur(const QString &b);
 
 
 

@@ -6,7 +6,7 @@
 #include <QTableWidget>
 #include <QTableView>
 #include "smtp.h"
-
+#include <QDesktopServices>
 #include <QMessageBox>
 #include<QString>
 #include <QMediaPlayer>
@@ -66,6 +66,144 @@ void MainWindow::on_ajouter_f_clicked()
         QString email_f=ui->emailf->text();
         int tel_f=ui->telephonef->text().toInt();
         fournisseurs f(id_f,nom_f,prenom_f,adresse_f,email_f,tel_f);
+
+        //partie controle saisie :
+                bool verif_code,verif_adrf,verif_prenf,verif_nomf, verif_emailf , verif_tele ;
+               verif_code=true;
+ verif_emailf =true;
+ verif_tele=true;
+               verif_nomf=true;
+               verif_prenf=true;
+               verif_adrf=true;
+
+               //verif id
+                QString code = ui->idf->text();
+                     QString numbers = "0123456789";
+                       bool verifHedhi = false;
+                       for(int i = 0; i < code.length(); i++){
+                           for(int j = 0; j < numbers.length(); j++){
+                               if(code[i] == numbers[j]){
+                                   verifHedhi = true;
+                               }
+                           }
+                           if(verifHedhi == false ){
+                               verif_code = false;
+                               QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                           QObject::tr("Erreur id invalide doit etre numero .\n"
+                                                       "Click Cancel to exit."), QMessageBox::Cancel);
+
+                               break;
+                           }
+                       }
+                       // verif nomf
+
+                       QString libb = ui->nomf->text();
+                              QString alphab = "azertyuiopqsdfghjklmwxcvbnéàçAZERTYUIOPQSDFGHJKLMWXCVBN";
+                               verifHedhi = false;
+                              for(int i = 0; i < libb.length(); i++){
+                                  for(int j = 0; j < alphab.length(); j++){
+                                      if(libb[i] == alphab[j]){
+                                          verifHedhi = true;
+                                      }
+                                  }
+                                  if(verifHedhi == false ){
+                                      verif_nomf = false;
+                                      QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                                  QObject::tr("nom doit etre sous forme caractére .\n"
+                                                              "Click Cancel to exit."), QMessageBox::Cancel);
+
+                                      break;
+                                  }
+                              }
+                              // verif prenf
+
+                              QString pren = ui->prenomf->text();
+
+                                      verifHedhi = false;
+                                     for(int i = 0; i < pren.length(); i++){
+                                         for(int j = 0; j < alphab.length(); j++){
+                                             if(pren[i] == alphab[j]){
+                                                 verifHedhi = true;
+                                             }
+                                         }
+                                         if(verifHedhi == false ){
+                                             verif_prenf = false;
+                                             QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                                         QObject::tr("prenom doit etre sous forme caractére .\n"
+                                                                     "Click Cancel to exit."), QMessageBox::Cancel);
+
+                                             break;
+                                         }
+                                     }
+                                     // verif adressef
+
+                                     QString adr = ui->adressef->text();
+QString al="azertyuiopmlkjhgfdsqwxcvbnAZERTYUIOPMLKJHGFDSQWXCVBN123456789";
+                                             verifHedhi = false;
+                                            for(int i = 0; i < adr.length(); i++){
+                                                for(int j = 0; j < al.length(); j++){
+                                                    if(adr[i] == al[j]){
+                                                        verifHedhi = true;
+                                                    }
+                                                }
+                                                if(verifHedhi == false ){
+                                                    verif_adrf = false;
+                                                    QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                                                QObject::tr("doit doit etre sous forme caractére et numero seulement .\n"
+                                                                            "Click Cancel to exit."), QMessageBox::Cancel);
+
+                                                    break;
+                                                }
+                                            }
+                                            // verif adressef
+
+                                            QString email = ui->emailf->text();
+                                                  QString alphabe = "azertyuiopqsdfghjklmwxcvbnéàçAZERTYUIOPQSDFGHJKLMWXCVBN@._-";
+                                                    verifHedhi = false;
+                                                   for(int i = 0; i < email.length(); i++){
+                                                       for(int j = 0; j < alphabe.length(); j++){
+                                                           if(email[i] == alphabe[j]){
+                                                               verifHedhi = true;
+                                                           }
+                                                       }
+                                                       if(verifHedhi == false ){
+                                                           verif_emailf = false;
+                                                           QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                                                       QObject::tr("email doit etre sous forme tttt@ttttt.ttt .\n"
+                                                                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+                                                           break;
+                                                       }
+                                                   }
+                                                   //verif tele
+                                                    QString tele = ui->telephonef->text();
+
+                                                            verifHedhi = false;
+                                                           for(int i = 0; i < tele.length(); i++){
+                                                               for(int j = 0; j < numbers.length(); j++){
+                                                                   if(tele[i] == numbers[j]){
+                                                                       verifHedhi = true;
+                                                                   }
+                                                               }
+                                                               if(verifHedhi == false ){
+                                                                   verif_tele = false;
+                                                                   QMessageBox::information(nullptr, QObject::tr("Erreur"),
+                                                                               QObject::tr("Erreur numero invalide doit etre numerique .\n"
+                                                                                           "Click Cancel to exit."), QMessageBox::Cancel);
+
+                                                                   break;
+                                                               }
+                                                           }
+
+
+
+
+
+
+
+
+                                                           if((verif_code )&&(verif_adrf)&&( verif_nomf)&&(verif_prenf)&&(verif_tele)&&(verif_emailf)){
+
         QMessageBox msg;
         bool test=f.ajouter();
                         if(test)
@@ -80,7 +218,7 @@ void MainWindow::on_ajouter_f_clicked()
                 else {
                 msg.setText("Echec au niveau de fournisseur");
             }
-            msg.exec();
+            msg.exec();}
 
 }
 
@@ -134,12 +272,7 @@ msg.setText("modification avec succes");
 
 }
 
-void MainWindow::on_rech_clicked()
-{
-    int id_f=ui->idrech->text().toInt();
-    ui->tabfourn->setModel(f.rechercher(id_f));
 
-}
 
 void MainWindow::on_trier_clicked()
 {
@@ -158,7 +291,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_musique_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/bejao/Desktop/2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/bejao/Desktop/1.mp3"));
            player->play();
            qDebug() << player ->errorString();
 }
@@ -179,11 +312,11 @@ void MainWindow::on_pushButton_3_clicked()
         ExportExcelObject obj(fileName, "mydata", ui->tabfourn);
 
         //colums to export
-        obj.addField(0, "Code", "char(20)");
-        obj.addField(1, "Prix", "char(20)");
-        obj.addField(2, "Quantite", "char(20)");
-        obj.addField(3, "Nom", "char(20)");
-        obj.addField(4, "Type", "char(20)");
+        obj.addField(0, "id", "char(20)");
+        obj.addField(1, "nom", "char(20)");
+        obj.addField(2, "prenom", "char(20)");
+        obj.addField(3, "adresse", "char(20)");
+        obj.addField(4, "email", "char(20)");
 
 
 
@@ -213,4 +346,29 @@ void MainWindow::on_Impdos_2_clicked()
 
 
 
+}
+
+void MainWindow::on_recherche_textChanged(const QString &arg1)
+{
+    fournisseurs f;
+
+        if(ui->recherche->text()=="")
+        {
+            ui->tabfourn->setModel(f.afficher());
+        }
+        else
+        {
+           ui->tabfourn->setModel(f.rechercher_fournisseur(ui->recherche->text()));
+        }
+
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+
+
+
+
+ QString p="ben arous";
+    QDesktopServices::openUrl(QUrl("http://maps.google.com.sg/maps?q="+p+"&oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&um=1&ie=UTF-8&hl=en&sa=N&tab=wl"));
 }

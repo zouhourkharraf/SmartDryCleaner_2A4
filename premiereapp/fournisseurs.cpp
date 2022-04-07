@@ -113,13 +113,13 @@ int fournisseurs:: getid_f()
     QSqlQueryModel* fournisseurs::afficher()
     {
         QSqlQueryModel* model=new QSqlQueryModel();
-              model->setQuery("SELECT* FROM fournisseurs");
-              model->setHeaderData(0, Qt::Horizontal,QObject::tr("iden"));
-              model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
-              model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
-              model->setHeaderData(3, Qt::Horizontal, QObject::tr("adresse"));
-              model->setHeaderData(4, Qt::Horizontal, QObject::tr("email"));
-              model->setHeaderData(5, Qt::Horizontal, QObject::tr("tel"));
+              model->setQuery("SELECT * FROM fournisseurs");
+              model->setHeaderData(0, Qt::Horizontal,QObject::tr("Id fournisseur"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom fournisseur"));
+              model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom fournisseur"));
+              model->setHeaderData(3, Qt::Horizontal, QObject::tr("Adresse fournisseur"));
+              model->setHeaderData(4, Qt::Horizontal, QObject::tr("Email fournisseur"));
+              model->setHeaderData(5, Qt::Horizontal, QObject::tr("Tel fournisseur"));
 
 
        return model;
@@ -146,16 +146,7 @@ int fournisseurs:: getid_f()
 
              return  query.exec();
          }
- QSqlQueryModel * fournisseurs::  rechercher(int id_f )
-    {
-        QString id_f_string=QString::number(id_f);
-        QSqlQueryModel * model= new QSqlQueryModel();
-        model-> setQuery("SELECT * FROM fournisseurs  where ID_F= "+id_f_string);
 
-
-        return model;
-
-    }
 
      QSqlQueryModel * fournisseurs::  tridesc()
      {
@@ -196,8 +187,18 @@ int fournisseurs:: getid_f()
                }
 
 
-
-
+     QSqlQueryModel * fournisseurs::rechercher_fournisseur(const QString &b)
+        {
+           QSqlQueryModel * model = new QSqlQueryModel();
+           model->setQuery("SELECT * FROM fournisseurs WHERE (id_f || nom_f || prenom_f || adresse_f || email_f ) LIKE '%"+b+"%'");
+           model->setHeaderData(0, Qt::Horizontal, QObject::tr("id_f"));
+           model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_f"));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom_f"));
+           model->setHeaderData(3, Qt::Horizontal, QObject::tr("adresse_f"));
+           model->setHeaderData(4, Qt::Horizontal, QObject::tr("email_f"));
+          // model->setHeaderData(5, Qt::Horizontal, QObject::tr("tel_f"));
+           return model;
+        }
 
 
 
