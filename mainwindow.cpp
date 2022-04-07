@@ -238,7 +238,7 @@ void MainWindow::on_image_2_clicked()
             bool valid=image.load(filename);
             if(valid){
         image=image.scaledToHeight(ui->image1->height(),Qt::FastTransformation);
-        image=image.scaledToHeight(ui->image1->height(),Qt::FastTransformation);
+
                 ui->image1->setPixmap(QPixmap::fromImage(image));
             }
         }
