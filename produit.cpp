@@ -105,6 +105,24 @@ bool Produit :: supprimer(int id_prod)
          return model;
 
      }
+     QSqlQueryModel * Produit::  trinom()
+     {
+
+         QSqlQueryModel * model= new QSqlQueryModel();
+     model->setQuery("select * from PRODUITS  order by LIBELLE_PROD ");
+
+         return model;
+
+     }
+     QSqlQueryModel * Produit::  tridf()
+     {
+
+         QSqlQueryModel * model= new QSqlQueryModel();
+     model->setQuery("select * from PRODUITS  order by ID_F ");
+
+         return model;
+
+     }
      QString Produit:: apercu_pdf()
            {
                QString text="        ******* Les Produits  *******      \n \n " ;

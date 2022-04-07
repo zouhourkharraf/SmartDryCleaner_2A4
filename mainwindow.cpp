@@ -339,3 +339,14 @@ void MainWindow::on_radioButton_clicked()
       }
 }
 
+
+void MainWindow::on_trinom_clicked()
+{
+     ui->tableView->setModel(Etmp.trinom());
+
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+   ui->tableView->setModel(Etmp.tridf());
+}

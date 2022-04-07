@@ -37,6 +37,8 @@ public:
     bool modifier(int ,int  , QDate   ,int ,QString  , QString ,int );
 
     QSqlQueryModel * tridesc();
+    QSqlQueryModel *  trinom() ;
+    QSqlQueryModel *   tridf() ;
     QString  apercu_pdf();
     QSqlQueryModel * recuperer_produit(int );
     QSqlQueryModel * rechercher_produit(const QString &b);
