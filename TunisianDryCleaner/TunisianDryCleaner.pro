@@ -1,7 +1,7 @@
 
 QT       += core gui sql
 QT       += core gui
-
+QT       += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -28,6 +28,7 @@ INCLUDEPATH += .
 QT += printsupport
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     employe.cpp \
     interfaceauthentification.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
     profil.cpp
 
 HEADERS += \
+    arduino.h \
     connection.h \
     employe.h \
     interfaceauthentification.h \

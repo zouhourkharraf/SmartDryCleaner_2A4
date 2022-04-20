@@ -105,9 +105,11 @@ private:
     Employe E;
     Profil P;
     //Profil EmpConnecte;
-    // attributs (pour le Chat)
+
+       // attributs (pour le Chat)
     QTcpSocket *socket; // Représente le serveur
     quint16 tailleMessage;
+
 
 };
 #endif // MAINWINDOW_H
